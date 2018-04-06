@@ -1,0 +1,132 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:fitsSystemWindows="true"
+    android:nestedScrollingEnabled="false"
+    tools:context="com.android.andrewgarver.recipegrabber.AddToCupboard">
+
+    <android.support.design.widget.AppBarLayout
+        android:id="@+id/view"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:theme="@style/AppTheme.AppBarOverlay">
+
+        <android.support.v7.widget.Toolbar
+            android:id="@+id/toolbar"
+            android:layout_width="match_parent"
+            android:layout_height="?attr/actionBarSize"
+            android:background="?attr/colorPrimary"
+            app:popupTheme="@style/AppTheme.PopupOverlay" />
+
+    </android.support.design.widget.AppBarLayout>
+
+    <ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentStart="true"
+        android:layout_below="@+id/view"
+        android:fillViewport="false"
+        android:orientation="vertical">
+
+        <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+            xmlns:app="http://schemas.android.com/apk/res-auto"
+            xmlns:tools="http://schemas.android.com/tools"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:fitsSystemWindows="true"
+            android:nestedScrollingEnabled="false"
+            tools:context="com.android.andrewgarver.recipegrabber.AddToCupboard">
+
+            <TextView
+                android:id="@+id/recipeName"
+                android:layout_width="300dp"
+                android:layout_height="wrap_content"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="20dp"
+                android:gravity="center"
+                android:text="Recipe Name"/>
+
+            <ImageView
+                android:id="@+id/recipePic"
+                android:layout_width="200dp"
+                android:layout_height="200dp"
+                android:layout_below="@+id/recipeName"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="17dp"
+                android:clickable="true"
+                android:src="@drawable/coming_soon_image" />
+
+            <RelativeLayout
+                android:layout_height="wrap_content"
+                android:layout_width="fill_parent"
+                android:id="@+id/headers"
+                android:layout_below="@id/recipePic">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textAppearance="?android:attr/textAppearanceSmall"
+                    android:text="Ingredients"
+                    android:textStyle="bold"
+                    android:textColor="@color/black"
+                    android:id="@+id/ingHeader"
+                    android:layout_marginLeft="40dp"
+                    android:layout_marginTop="25dp"/>
+
+            </RelativeLayout>
+
+
+            <RelativeLayout
+                android:layout_height="wrap_content"
+                android:layout_width="fill_parent"
+                android:id="@+id/input"
+                android:layout_below="@id/headers"
+                >
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:text="Ingredients\nWill go\nHere\n"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/ingQuant"
+                    android:textAppearance="?android:attr/textAppearanceListItemSmall"
+                    android:layout_marginStart="40dp"
+                    android:layout_alignParentStart="true" />
+            </RelativeLayout>
+
+            <LinearLayout
+                android:id="@+id/container"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:layout_below="@id/input">
+            </LinearLayout>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/container"
+                android:paddingLeft="40dp"
+                android:paddingTop="20dp"
+                android:textAppearance="?android:attr/textAppearanceSmall"
+                android:text="Instructions"
+                android:textStyle="bold"
+                android:textColor="@color/black"
+                android:id="@+id/instructionLabel"/>
+
+            <TextView
+                android:id="@+id/recipeInstructions"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:paddingLeft="40dp"
+                android:text="1. These are the\n2. Instructions for how\n3. To make the recipe"
+                android:ems="10"
+                android:layout_centerHorizontal="true"
+                android:layout_below="@id/instructionLabel"/>
+
+        </RelativeLayout>
+    </ScrollView>
+</RelativeLayout>

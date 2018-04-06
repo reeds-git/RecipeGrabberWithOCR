@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        android:id="@+id/lineLayout"
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:clickable="true"
+        android:focusable="true">
+
+    <RelativeLayout
+        android:id="@+id/menuLayout"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="0.46"
+        android:clickable="true"
+        android:focusable="true">
+
+        <com.android.andrewgarver.recipegrabber.extendCalView.ExtendedCalendarView
+            android:id="@+id/calendarMenu"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+        </com.android.andrewgarver.recipegrabber.extendCalView.ExtendedCalendarView>
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:layout_width="fill_parent"
+        android:layout_height="0dp"
+        android:layout_weight="0.34"
+        android:id="@+id/eventSection">
+
+        <ListView
+            android:id="@+id/menuListView"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_gravity="center_horizontal|center"
+            android:clickable="true"
+            android:focusable="true">
+        </ListView>
+
+        <ImageButton
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:layout_marginBottom="5dp"
+            android:layout_marginRight="5dp"
+            android:src="@drawable/add"
+            android:background="@null"
+            android:layout_gravity="end|bottom"
+            android:baselineAligned="false"
+            android:nestedScrollingEnabled="false"
+            android:cropToPadding="false"
+            android:adjustViewBounds="true"
+            android:scaleType="fitCenter"
+            android:clickable="true"
+            android:contextClickable="false"
+            android:contentDescription="Add Recipe Event to Calendar"
+            android:id="@+id/addEvent"
+            android:layout_alignParentBottom="true"
+            android:layout_alignParentEnd="true" />
+    </RelativeLayout>
+</LinearLayout>

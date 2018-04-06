@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools" android:layout_width="match_parent"
+    android:layout_height="match_parent" android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingTop="@dimen/activity_vertical_margin"
+    android:paddingBottom="@dimen/activity_vertical_margin"
+    tools:context="com.android.andrewgarver.recipegrabber.AboutPage">
+
+    <TextView
+        android:id="@+id/titleAbout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:text="@string/titleAbout"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentStart="true" />
+
+    <ScrollView
+        android:id="@+id/svAbout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_alignTop="@+id/titleAbout"
+        android:layout_alignParentStart="true"
+        android:layout_marginTop="47dp"
+        android:fillViewport="true" >
+
+        <TextView
+            android:id="@+id/tvAbout"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:textAppearance="?android:attr/textAppearanceSmall"
+            android:text="@string/aboutText"/>
+
+    </ScrollView>
+
+</RelativeLayout>

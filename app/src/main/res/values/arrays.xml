@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="metrics">
+        <item> </item>
+        <item>cup</item>
+        <item>dash</item>
+        <item>fl oz</item>
+        <item>gallon</item>
+        <item>lb</item>
+        <item>liter</item>
+        <item>ml</item>
+        <item>oz</item>
+        <item>piece</item>
+        <item>pinch</item>
+        <item>pint</item>
+        <item>quart</item>
+        <item>slice</item>
+        <item>tbsp</item>
+        <item>tsp</item>
+    </string-array>
+</resources>

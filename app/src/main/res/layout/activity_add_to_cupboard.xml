@@ -1,0 +1,161 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/addTClayout"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:fitsSystemWindows="true"
+    tools:context="com.android.andrewgarver.recipegrabber.AddToCupboard">
+
+    <android.support.design.widget.AppBarLayout
+        android:id="@+id/view"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:theme="@style/AppTheme.AppBarOverlay">
+
+        <android.support.v7.widget.Toolbar
+            android:id="@+id/toolbar"
+            android:layout_width="match_parent"
+            android:layout_height="?attr/actionBarSize"
+            android:background="?attr/colorPrimaryDark"
+            app:popupTheme="@style/AppTheme.PopupOverlay" />
+
+    </android.support.design.widget.AppBarLayout>
+
+    <ScrollView
+        android:id="@+id/scrollView"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:layout_below="@id/view"
+        android:fillViewport="true">
+
+        <RelativeLayout
+            android:id="@+id/innerLayout"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content">
+
+            <RelativeLayout
+                android:id="@+id/headers"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content">
+
+                <TextView
+                    android:id="@+id/ingHeader"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="40dp"
+                    android:layout_marginTop="25dp"
+                    android:text="Quantity"
+                    android:textAppearance="?android:attr/textAppearanceSmall"
+                    android:textColor="@color/black"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:id="@+id/unitText"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignTop="@+id/ingHeader"
+                    android:layout_toRightOf="@+id/ingHeader"
+                    android:paddingLeft="50dp"
+                    android:text="Units"
+                    android:textAppearance="?android:attr/textAppearanceSmall"
+                    android:textColor="@color/black"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:id="@+id/nameText"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignTop="@id/unitText"
+                    android:layout_toRightOf="@+id/unitText"
+                    android:paddingLeft="50dp"
+                    android:text="Ingredient Name"
+                    android:textAppearance="?android:attr/textAppearanceSmall"
+                    android:textColor="@color/black"
+                    android:textStyle="bold" />
+            </RelativeLayout>
+
+
+            <RelativeLayout
+                android:id="@+id/input"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_alignParentStart="true"
+                android:layout_alignParentTop="true">
+
+                <EditText
+                    android:id="@+id/ingQuant"
+                    android:layout_width="50dp"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentStart="true"
+                    android:layout_marginStart="40dp"
+                    android:layout_marginTop="45dp"
+                    android:ems="10"
+                    android:inputType="number"
+                    android:lines="1"
+                    android:singleLine="true"
+                    android:textAppearance="?android:attr/textAppearanceListItemSmall" />
+
+                <Spinner
+                    android:id="@+id/ingUnit"
+                    android:layout_width="100dp"
+                    android:layout_height="40dp"
+                    android:layout_alignTop="@+id/ingQuant"
+                    android:layout_marginLeft="20dp"
+                    android:layout_toRightOf="@+id/ingQuant"
+                    android:entries="@array/metrics"
+                    android:spinnerMode="dropdown" />
+
+                <EditText
+                    android:id="@+id/ingName"
+                    android:layout_width="100dp"
+                    android:layout_height="wrap_content"
+                    android:layout_alignTop="@+id/ingQuant"
+                    android:layout_marginStart="15dp"
+                    android:layout_toEndOf="@+id/ingUnit"
+                    android:ems="10"
+                    android:inputType="text"
+                    android:lines="1"
+                    android:singleLine="true"
+                    android:textAppearance="?android:attr/textAppearanceListItemSmall" />
+            </RelativeLayout>
+
+            <LinearLayout
+                android:id="@+id/container"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/input"
+                android:orientation="vertical"></LinearLayout>
+
+            <ImageButton
+                android:id="@+id/addMore"
+                android:layout_width="35dp"
+                android:layout_height="35dp"
+                android:layout_alignParentStart="true"
+                android:layout_below="@+id/container"
+                android:layout_gravity="end|bottom"
+                android:layout_marginStart="32dp"
+                android:layout_marginTop="20dp"
+                android:adjustViewBounds="true"
+                android:background="@null"
+                android:baselineAligned="false"
+                android:clickable="true"
+                android:contentDescription="Add More Ingredients"
+                android:contextClickable="false"
+                android:cropToPadding="false"
+                android:nestedScrollingEnabled="false"
+                android:scaleType="fitCenter"
+                android:src="@drawable/add" />
+
+            <Button
+                android:id="@+id/addIng"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/addMore"
+                android:layout_centerHorizontal="true"
+                android:singleLine="false"
+                android:text="Add to Cupboard!" />
+        </RelativeLayout>
+    </ScrollView>
+</RelativeLayout>
