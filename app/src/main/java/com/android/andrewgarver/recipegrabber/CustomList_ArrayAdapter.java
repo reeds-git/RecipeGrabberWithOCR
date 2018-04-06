@@ -17,12 +17,12 @@ import android.widget.TextView;
  * @version 1.0
  * @since   12/10/2015
  */
-public class CustomList extends ArrayAdapter<String>{
+public class CustomList_ArrayAdapter extends ArrayAdapter<String>{
 
     /**
      * Debugging Tag to display LogCat messages for debugging
      */
-    private static final String TAG = CustomList.class.getSimpleName();
+    private static final String TAG = CustomList_ArrayAdapter.class.getSimpleName();
 
     /**
      *
@@ -42,8 +42,8 @@ public class CustomList extends ArrayAdapter<String>{
      * @param web
      * @param imageId
      */
-    public CustomList(Activity context,
-                      String[] web, Integer[] imageId) {
+    public CustomList_ArrayAdapter(Activity context,
+                                   String[] web, Integer[] imageId) {
         super(context, R.layout.frag_cookbook, web);
         this.context = context;
         this.web = web;

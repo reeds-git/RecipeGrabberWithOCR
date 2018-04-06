@@ -16,7 +16,7 @@ import android.widget.TextView;
  * @version 1.0
  * @since   12/10/2015
  */
-public class About_page extends AppCompatActivity {
+public class About_pageActivity extends AppCompatActivity {
 
     /**
      * Forward declaration of the TextView

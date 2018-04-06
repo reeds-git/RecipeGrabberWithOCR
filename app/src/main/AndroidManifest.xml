@@ -9,7 +9,7 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme" >
         <activity
-            android:name=".ActivityMain"
+            android:name=".MainActivity"
             android:label="@string/app_name"
             android:theme="@style/AppTheme.NoActionBar" >
             <intent-filter>
@@ -19,22 +19,22 @@
             </intent-filter>
         </activity>
         <activity
-            android:name=".AddToCupboard"
+            android:name=".AddToCupboardActivity"
             android:label="@string/title_activity_add_to_cupboard"
             android:theme="@style/AppTheme.NoActionBar" >
         </activity>
         <activity
-            android:name=".AddRecipe"
+            android:name=".AddRecipeActivity"
             android:label="Add a Recipe"
             android:theme="@style/AppTheme.NoActionBar" >
         </activity>
         <activity
-            android:name=".AddToShoppingList"
+            android:name=".AddToShoppingListActivity"
             android:label="Add To Shopping List"
             android:theme="@style/AppTheme.NoActionBar" >
         </activity>
         <activity
-            android:name=".DisplayRecipe"
+            android:name=".DisplayRecipeActivity"
             android:label="Lets Make It"
             android:theme="@style/AppTheme.NoActionBar" >
         </activity>
@@ -43,9 +43,9 @@
             android:name=".extendCalView.CalendarProvider"
             android:authorities="com.android.andrewgarver.recipegrabber.extendCalView.calendarprovider" />
 
-        <activity android:name=".PickRecipe" >
+        <activity android:name=".PickRecipeActivity" >
         </activity>
-        <activity android:name=".About_page" >
+        <activity android:name=".About_pageActivity" >
         </activity>
     </application>
 

@@ -1,7 +1,6 @@
 package com.android.andrewgarver.recipegrabber;
 
 import android.content.Context;
-import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
@@ -30,12 +29,12 @@ import java.util.ArrayList;
  * @version 1.0
  * @since   12/10/2015
  */
-public class AddRecipe extends AppCompatActivity {
+public class AddRecipeActivity extends AppCompatActivity {
 
     /**
      * Debugging Tag to display LogCat messages for debugging
      */
-    private static final String TAG = AddRecipe.class.getSimpleName();
+    private static final String TAG = AddRecipeActivity.class.getSimpleName();
 
     /**
      * Set up DatabaseAdapter and a flag for if there is correct input
@@ -66,7 +65,7 @@ public class AddRecipe extends AppCompatActivity {
             R.id.newRow16, R.id.newRow17, R.id.newRow18, R.id.newRow19, R.id.newRow20};
 
     /**
-     * Opens AddRecipe Activity so that you can add a recipe to the cookbook
+     * Opens AddRecipeActivity Activity so that you can add a recipe to the cookbook
      * <p>
      * Adds fields to add recipe name, quantity, units, ingredients, and
      *   instructions to the database. Sets numNewLines to 0.
@@ -80,7 +79,7 @@ public class AddRecipe extends AppCompatActivity {
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
         numNewLines = 0;
-        Log.i(TAG, "Started Add To Cookbook");
+        Log.i(TAG, "Started Add To Cookbook_Frag");
         dbHelper = new DatabaseAdapter(this);
 
         /**
@@ -217,7 +216,7 @@ public class AddRecipe extends AppCompatActivity {
                         dbHelper.addRecipeIngredients(ingred.getName(), ingred.getQuantityString(),
                                 ingred.getMetric(), id);
 
-                    Cookbook.refreshCookbook();
+                    Cookbook_Frag.refreshCookbook();
                     finish();
                 }
                 else {

@@ -25,12 +25,12 @@ import java.util.ArrayList;
  * @version 1.0
  * @since   12/10/2015
  */
-public class ShoppingList extends Fragment {
+public class ShoppingList_Frag extends Fragment {
 
     /**
      * Debugging Tag to display LogCat messages for debugging
      */
-    private final static String TAG = ShoppingList.class.getSimpleName();
+    private final static String TAG = ShoppingList_Frag.class.getSimpleName();
 
     /**
      *
@@ -94,7 +94,7 @@ public class ShoppingList extends Fragment {
         final ArrayList<Ingredient> plannedIngredients = dbHelper.getPlannedIngredients(plannedRecipeIds);
 
         /**
-         * Get the ingredients in the Cupboard
+         * Get the ingredients in the Cupboard_Frag
          */
         ArrayList<Ingredient> cupboardIngredients = dbHelper.getAllIngredientsVerbose();
 
@@ -191,7 +191,7 @@ public class ShoppingList extends Fragment {
                         for (Ingredient ing : plannedIngredients)
                             if (ing.getName().equalsIgnoreCase(toDel)) {
                                 Toast.makeText(getContext(), "Unable to delete ingredient for a planned recipe.\n" +
-                                        "Remove recipe from the Menu or add ingredient to the cupboard", Toast.LENGTH_LONG).show();
+                                        "Remove recipe from the Menu_Frag or add ingredient to the cupboard", Toast.LENGTH_LONG).show();
                                 return;
                             }
 
@@ -241,7 +241,7 @@ public class ShoppingList extends Fragment {
              * @param v is a view
              */
             public void onClick(View v) {
-                startActivity(new Intent(getContext(), AddToShoppingList.class));
+                startActivity(new Intent(getContext(), AddToShoppingListActivity.class));
             }
         });
 

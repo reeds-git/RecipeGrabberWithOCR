@@ -26,12 +26,12 @@ import java.util.ArrayList;
  * @version 1.0
  * @since   12/10/2015
  */
-public class AddToShoppingList extends AppCompatActivity {
+public class AddToShoppingListActivity extends AppCompatActivity {
 
     /**
      * Debugging Tag to display LogCat messages for debugging
      */
-    private static final String TAG = AddToShoppingList.class.getSimpleName();
+    private static final String TAG = AddToShoppingListActivity.class.getSimpleName();
     private DatabaseAdapter dbHelper;
     private ArrayList<Ingredient> ingredientsForShoppingList = new ArrayList<>();
 
@@ -188,7 +188,7 @@ public class AddToShoppingList extends AppCompatActivity {
                     for (Ingredient ingred : ingredientsForShoppingList)
                         dbHelper.addToShoppingList(ingred.getName(), ingred.getQuantityString(),
                                 ingred.getMetric(), false);
-                    ShoppingList.refreshShoppingList();
+                    ShoppingList_Frag.refreshShoppingList();
                     finish();
                 }
                  else {

@@ -19,12 +19,12 @@ import java.util.ArrayList;
  * @version 1.0
  * @since   12/10/2015
  */
-public class PickRecipe extends AppCompatActivity {
+public class PickRecipeActivity extends AppCompatActivity {
 
     /**
      * Debugging Tag to display LogCat messages for debugging
      */
-    private static final String TAG = PickRecipe.class.getSimpleName();
+    private static final String TAG = PickRecipeActivity.class.getSimpleName();
 
     /**
      * Set up variables for later use
@@ -57,7 +57,7 @@ public class PickRecipe extends AppCompatActivity {
         recipesList.setAdapter(adapter);
 
         /**
-         * This will set the items to handle sending the needed information back to Menu
+         * This will set the items to handle sending the needed information back to Menu_Frag
          */
         recipesList.setOnItemClickListener(new AdapterView.OnItemClickListener() {
 
@@ -73,7 +73,7 @@ public class PickRecipe extends AppCompatActivity {
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
 
                 /**
-                 * Send the recipe name back to Menu with a RESULT_OK so it knows to add it to the
+                 * Send the recipe name back to Menu_Frag with a RESULT_OK so it knows to add it to the
                  * calendar
                  */
                 Intent data = new Intent();
@@ -89,7 +89,7 @@ public class PickRecipe extends AppCompatActivity {
         recipesList.setOnItemLongClickListener(new AdapterView.OnItemLongClickListener() {
 
             /**
-             * This will call the DisplayRecipe Activity for the item long clicked
+             * This will call the DisplayRecipeActivity Activity for the item long clicked
              *
              * @param parent
              * @param view
@@ -108,7 +108,7 @@ public class PickRecipe extends AppCompatActivity {
                 /**
                  * Use Extras on intent to share information
                  */
-                Intent intent = new Intent(getApplicationContext(), DisplayRecipe.class);
+                Intent intent = new Intent(getApplicationContext(), DisplayRecipeActivity.class);
                 intent.putExtra("recipeName", recipeName);
                 startActivity(intent);
 

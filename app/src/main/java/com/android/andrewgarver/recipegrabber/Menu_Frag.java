@@ -33,12 +33,12 @@ import java.util.ArrayList;
  * @version 1.0
  * @since   12/10/2015
  */
-public class Menu extends Fragment {
+public class Menu_Frag extends Fragment {
 
     /**
      * Debugging Tag to display LogCat messages for debugging
      */
-    private static final String TAG = Menu.class.getSimpleName();
+    private static final String TAG = Menu_Frag.class.getSimpleName();
 
     /**
      * Constant recipeRequest = 1
@@ -102,7 +102,7 @@ public class Menu extends Fragment {
         addBtn.setOnClickListener(new View.OnClickListener() {
 
             /**
-             * Starts the PickRecipe activity only if a day has been selected
+             * Starts the PickRecipeActivity activity only if a day has been selected
              *
              * @param v The view that was clicked. Labeled v.
              */
@@ -112,14 +112,14 @@ public class Menu extends Fragment {
                  * If plus button clicked without selecting a day it won't do anything
                  */
                 if (selDay != null)
-                    startActivityForResult(new Intent(getContext(), PickRecipe.class), recipeRequest);
+                    startActivityForResult(new Intent(getContext(), PickRecipeActivity.class), recipeRequest);
             }
         });
 
         list.setOnItemClickListener(new AdapterView.OnItemClickListener() {
 
             /**
-             * Opens the DisplayRecipe activity to be display the recipe
+             * Opens the DisplayRecipeActivity activity to be display the recipe
              *
              * @param parent Saves the where the item was clicked.
              * @param view The view that was clicked.
@@ -137,7 +137,7 @@ public class Menu extends Fragment {
                 /**
                  * Use Extras on intent to share information
                  */
-                Intent intent = new Intent(getActivity(), DisplayRecipe.class);
+                Intent intent = new Intent(getActivity(), DisplayRecipeActivity.class);
                 intent.putExtra("recipeName", recipeName);
                 startActivity(intent);
             }

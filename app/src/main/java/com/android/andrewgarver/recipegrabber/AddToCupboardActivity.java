@@ -1,7 +1,6 @@
 package com.android.andrewgarver.recipegrabber;
 
 import android.content.Context;
-import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
@@ -18,7 +17,7 @@ import android.widget.Toast;
 import java.util.ArrayList;
 
 /**
- * Class to add ingredients to the Cupboard
+ * Class to add ingredients to the Cupboard_Frag
  * <p>
  * Creates fields to add quantity, units, and ingredients up to 20 at a time
  *   to your cupboard.
@@ -27,12 +26,12 @@ import java.util.ArrayList;
  * @version 1.0
  * @since   12/10/2015
  */
-public class AddToCupboard extends AppCompatActivity {
+public class AddToCupboardActivity extends AppCompatActivity {
 
     /**
      * Debugging Tag to display LogCat messages for debugging
      */
-    private static final String TAG = AddToCupboard.class.getSimpleName();
+    private static final String TAG = AddToCupboardActivity.class.getSimpleName();
     private DatabaseAdapter dbHelper;
 
     /**
@@ -60,7 +59,7 @@ public class AddToCupboard extends AppCompatActivity {
             R.id.newRow16, R.id.newRow17, R.id.newRow18, R.id.newRow19, R.id.newRow20};
 
     /**
-     * Opens AddToCupboard Activity so that you can add a ingredients to the cupboard
+     * Opens AddToCupboardActivity Activity so that you can add a ingredients to the cupboard
      * <p>
      * Adds fields to add quantity, units, and ingredients to the database.
      * Sets numNewLines to 0.
@@ -74,7 +73,7 @@ public class AddToCupboard extends AppCompatActivity {
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
         numNewLines = 0;
-        Log.i(TAG, "Started Add To Cupboard");
+        Log.i(TAG, "Started Add To Cupboard_Frag");
         dbHelper = new DatabaseAdapter(this);
 
         /**
@@ -216,13 +215,13 @@ public class AddToCupboard extends AppCompatActivity {
                         }
 
                         if (inShoppingList)
-                            ShoppingList.refreshShoppingList();
+                            ShoppingList_Frag.refreshShoppingList();
 
                         if (inCupboard)
                             dbHelper.deleteIngredient(ingred);
 
                         dbHelper.addIngredient(ingred.getQuantityString(), ingred.getMetric(), ingred.getName());
-                        Cupboard.refreshCupboard();
+                        Cupboard_Frag.refreshCupboard();
                         Log.i(TAG, "added ingredients to cupboard");
                         finish();
                     }

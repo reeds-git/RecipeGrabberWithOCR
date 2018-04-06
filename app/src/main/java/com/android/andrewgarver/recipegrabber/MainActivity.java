@@ -22,12 +22,12 @@ import android.view.MenuItem;
  * @version 1.0
  * @since   12/10/2015
  */
-public class ActivityMain extends AppCompatActivity {
+public class MainActivity extends AppCompatActivity {
 
     /**
      * Debugging Tag to display LogCat messages for debugging
      */
-    private static final String TAG = ActivityMain.class.getSimpleName();
+    private static final String TAG = MainActivity.class.getSimpleName();
 
     /**
      * Adapter for displaying the fragment.
@@ -118,13 +118,13 @@ public class ActivityMain extends AppCompatActivity {
     public boolean onOptionsItemSelected(MenuItem item) {
 
         /*
-         * Save the Menu items id so that we can open the correct page
+         * Save the Menu_Frag items id so that we can open the correct page
          */
         int id = item.getItemId();
 
         //noinspection SimplifiableIfStatement
         if (id == R.id.action_about) {
-            startActivity(new Intent(this, About_page.class));
+            startActivity(new Intent(this, About_pageActivity.class));
             return true;
         }
 
@@ -154,20 +154,20 @@ public class ActivityMain extends AppCompatActivity {
          * Gets the Items given the position
          *
          * @param position which tab you are on
-         * @return Cookbook, Menu, Cupboard, or ShoppingList object depending on the
+         * @return Cookbook_Frag, Menu_Frag, Cupboard_Frag, or ShoppingList_Frag object depending on the
          *         position passed in
          */
         @Override
         public Fragment getItem(int position) {
             switch(position) {
                 case 0:
-                    return new Cookbook();
+                    return new Cookbook_Frag();
                 case 1:
-                    return new com.android.andrewgarver.recipegrabber.Menu();
+                    return new Menu_Frag();
                 case 2:
-                    return new Cupboard();
+                    return new Cupboard_Frag();
                 default:
-                    return new ShoppingList();
+                    return new ShoppingList_Frag();
             }
         }
 
@@ -186,7 +186,7 @@ public class ActivityMain extends AppCompatActivity {
          * Gets the title of each page
          *
          * @param position which page you are on
-         * @return Cookbook, Menu, My Cupboard, Shopping List, or null depending
+         * @return Cookbook_Frag, Menu_Frag, My Cupboard_Frag, Shopping List, or null depending
          *           on the position passed in
          */
         @Override

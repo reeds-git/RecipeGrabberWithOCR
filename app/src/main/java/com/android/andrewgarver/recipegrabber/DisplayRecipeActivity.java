@@ -16,12 +16,12 @@ import android.widget.TextView;
  * @version 1.0
  * @since   12/10/2015
  */
-public class DisplayRecipe extends AppCompatActivity {
+public class DisplayRecipeActivity extends AppCompatActivity {
 
     /**
      * Debugging Tag to display LogCat messages for debugging
      */
-    private static final String TAG = DisplayRecipe.class.getSimpleName();
+    private static final String TAG = DisplayRecipeActivity.class.getSimpleName();
 
     /**
      * This is the access point for the database

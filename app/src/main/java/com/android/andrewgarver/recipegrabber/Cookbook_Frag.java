@@ -5,7 +5,6 @@ import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -22,19 +21,19 @@ import java.util.ArrayList;
  *<p>
  * Displays recipes added by the user in a ListView.
  * Long ListView clicks pull up option to delete or cancel delete.
- * Clicking on the recipe opens DisplayRecipe and displays the recipe.
+ * Clicking on the recipe opens DisplayRecipeActivity and displays the recipe.
  * Recipes are stored in a SQLLite database
  *
  * @author  Andrew Garver, Landon Jamieson, and Reed Atwood
  * @version 1.0
  * @since   11/2/2015
  */
-public class Cookbook extends Fragment {
+public class Cookbook_Frag extends Fragment {
 
     /**
      * Debugging Tag to display LogCat messages for debugging
      */
-    private static final String TAG = Cookbook.class.getSimpleName();
+    private static final String TAG = Cookbook_Frag.class.getSimpleName();
 
     /**
      * Set up needed variables
@@ -87,7 +86,7 @@ public class Cookbook extends Fragment {
                 /**
                  * Use Extras on intent to share information
                  */
-                Intent intent = new Intent(getActivity(), DisplayRecipe.class);
+                Intent intent = new Intent(getActivity(), DisplayRecipeActivity.class);
                 intent.putExtra("recipeName", recipeName);
                 startActivity(intent);
             }
@@ -137,7 +136,7 @@ public class Cookbook extends Fragment {
                         adapter.remove(toDel);
                         dbHelper.deleteRecipe(toDel);
                         getActivity().getContentResolver().delete(CalendarProvider.CONTENT_URI, CalendarProvider.EVENT + "='" + toDel + "'", null);
-                        Menu.refreshMenu();
+                        Menu_Frag.refreshMenu();
                         Toast.makeText(getContext(), "Deleting recipe", Toast.LENGTH_LONG).show();
                     }
                 });
@@ -184,7 +183,7 @@ public class Cookbook extends Fragment {
              * @param v is a view
              */
             public void onClick(View v) {
-                startActivity(new Intent(getContext(), AddRecipe.class));
+                startActivity(new Intent(getContext(), AddRecipeActivity.class));
             }
             });
 

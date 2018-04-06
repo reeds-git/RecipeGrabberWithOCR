@@ -24,12 +24,12 @@ import java.util.ArrayList;
  * @version 1.0
  * @since   11/2/2015
  */
-public class Cupboard extends Fragment {
+public class Cupboard_Frag extends Fragment {
 
     /**
      * Debugging Tag to display LogCat messages for debugging
      */
-    private static final String TAG = Cupboard.class.getSimpleName();
+    private static final String TAG = Cupboard_Frag.class.getSimpleName();
 
     /**
      * Private member variables
@@ -160,7 +160,7 @@ public class Cupboard extends Fragment {
              * @param v is a view
              */
             public void onClick(View v) {
-                startActivity(new Intent(getContext(), AddToCupboard.class));
+                startActivity(new Intent(getContext(), AddToCupboardActivity.class));
             }
         });
 
